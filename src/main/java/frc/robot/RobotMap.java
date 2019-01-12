@@ -9,11 +9,10 @@ package frc.robot;
 
 import com.kauailabs.navx.frc.AHRS;
 
-import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.VictorSP;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -33,16 +32,16 @@ public class RobotMap {
    public static AHRS ahrs;
    //Initializes all the motors
  public static void init(){
-    topLeft= new VictorSP(0);
-    bottomLeft= new VictorSP(1);
-    topRight= new VictorSP(2);
-    bottomRight= new VictorSP(3);
+    topLeft= new Spark(0);
+    bottomLeft= new Spark(1);
+    topRight= new Spark(2);
+    bottomRight= new Spark(3);
     left = new SpeedControllerGroup(topLeft, bottomLeft);
     // needs to be inverted because each side of the drivetrain is a
     //mirror image of the other
     left.setInverted(true);
     right = new SpeedControllerGroup(topRight, bottomRight);
-    right.setInverted(true);
+    right.setInverted(false);
     //sensor
     ahrs= new AHRS(SPI.Port.kMXP);
     //pidcontorller
