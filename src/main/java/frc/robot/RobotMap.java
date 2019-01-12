@@ -30,6 +30,9 @@ public class RobotMap {
     public static SpeedControllerGroup left;
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
+   public static int controllerport =0;
+    public static int axisvalueleft = 2;
+   public static  int axisvalueright =5;
    //Initializes all the motors
  public static void init(){
     topLeft= new Spark(0);
@@ -44,8 +47,9 @@ public class RobotMap {
     right.setInverted(false);
     //sensor
     ahrs= new AHRS(SPI.Port.kMXP);
-    //pidcontorller
-    
+     
+
+
   }
 
   

@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.OI;
 import frc.robot.RobotMap;
 
 /**
@@ -39,14 +40,21 @@ public class Drivetrain extends Subsystem implements PIDOutput {
     pController.setContinuous(true);
     pController.disable();
   }
-  //this is the thing that Isabel doesn't want to use
+  /*this is the thing that Isabel doesn't want to use:
+   If you press a button the robot will automatically drive straight and all 
+   you control with the sticks is the speed
+  */
   public void driveStraight(){
     if(!pController.isEnabled()){
       pController.setSetpoint(ahrs.getYaw());
       error=0;//updated periodically
       pController.enable();
     }
-  //need to add joysticks 
+  //speed is average of the 2 stick values
+  double magnitude = (OI.controller.getRawAxis(RobotMap.axisvalueleft)+OI
+  .controller.getRawAxis(RobotMap.axisvalueright))/2;
+  setSpeed(magnitude,magnitude);
+
   }
 
   @Override
