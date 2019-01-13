@@ -12,25 +12,30 @@ import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
 public class Drivetrain extends Subsystem implements PIDOutput {
-  private final SpeedControllerGroup left = RobotMap.left;
-  private final SpeedControllerGroup right = RobotMap.right;
+  //private final SpeedControllerGroup left = RobotMap.left;
+  //private final SpeedControllerGroup right = RobotMap.right;
+  private final DifferentialDrive robotDrive = RobotMap.robotDrive;
   private final AHRS ahrs = RobotMap.ahrs;
    private PIDController pController;
    private double error;
-//basic tank drive
-  public void setSpeed(double rightspeed,double leftspeed){
-    left.set(leftspeed);
-    right.set(rightspeed);
+
+//basic tank drive- we might not need this code
+ // public void setSpeed(double rightspeed,double leftspeed){
+   // left.set(leftspeed);
+    //right.set(rightspeed);
     //SmartDashboard.putString("Speed", "Speed set ");
-  }
+  //}
+
   //will be run at the beginning of the match
   public void setupPConroller(double kp, double ki,double kd){
     pController= new PIDController(kp,ki,kd,ahrs,this);
@@ -51,10 +56,9 @@ public class Drivetrain extends Subsystem implements PIDOutput {
       pController.enable();
     }
   //speed is average of the 2 stick values
-  double magnitude = (OI.controller.getRawAxis(RobotMap.axisvalueleft)+OI
+  double magnitude = (Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueleft)+Robot.m_oi
   .controller.getRawAxis(RobotMap.axisvalueright))/2;
-  setSpeed(magnitude,magnitude);
-
+  robotDrive.tankDrive(magnitude, magnitude);
   }
 
   @Override

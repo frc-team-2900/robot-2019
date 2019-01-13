@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -30,6 +31,7 @@ public class RobotMap {
     public static SpeedControllerGroup left;
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
+   public static DifferentialDrive robotDrive;
    public static int controllerport =0;
     public static int axisvalueleft = 2;
    public static  int axisvalueright =5;
@@ -40,14 +42,14 @@ public class RobotMap {
     topRight= new Spark(2);
     bottomRight= new Spark(3);
     left = new SpeedControllerGroup(topLeft, bottomLeft);
-    // needs to be inverted because each side of the drivetrain is a
-    //mirror image of the other
-    left.setInverted(true);
     right = new SpeedControllerGroup(topRight, bottomRight);
-    right.setInverted(false);
+    
     //sensor
     ahrs= new AHRS(SPI.Port.kMXP);
-     
+  robotDrive= new DifferentialDrive(left, right);
+  robotDrive.setSafetyEnabled(true);
+  robotDrive.setExpiration(0.1);
+  robotDrive.setMaxOutput(1.0);
 
 
   }
