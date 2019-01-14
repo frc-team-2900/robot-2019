@@ -32,9 +32,15 @@ public class RobotMap {
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
    public static DifferentialDrive robotDrive;
+   //controller port can be found on driver station
    public static int controllerport =0;
     public static int axisvalueleft = 2;
    public static  int axisvalueright =5;
+   //drive straight pid values
+   public static double drivetrainKP= 0.03;
+   public static double drivetrainKD =0;
+   public static double drivetrainKI=0;
+
    //Initializes all the motors
  public static void init(){
     topLeft= new Spark(0);
@@ -46,6 +52,7 @@ public class RobotMap {
     
     //sensor
     ahrs= new AHRS(SPI.Port.kMXP);
+    //drivetrain
   robotDrive= new DifferentialDrive(left, right);
   robotDrive.setSafetyEnabled(true);
   robotDrive.setExpiration(0.1);

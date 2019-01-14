@@ -58,7 +58,7 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   //speed is average of the 2 stick values
   double magnitude = (Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueleft)+Robot.m_oi
   .controller.getRawAxis(RobotMap.axisvalueright))/2;
-  robotDrive.tankDrive(magnitude, magnitude);
+  robotDrive.tankDrive(magnitude+error, magnitude-error);
   }
 
   @Override
