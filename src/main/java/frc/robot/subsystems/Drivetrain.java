@@ -26,7 +26,7 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   //private final SpeedControllerGroup right = RobotMap.right;
   private final DifferentialDrive robotDrive = RobotMap.robotDrive;
   private final AHRS ahrs = RobotMap.ahrs;
-   private PIDController pController;
+   public PIDController pController;
    private double error;
 
 //basic tank drive- we might not need this code
@@ -50,11 +50,11 @@ public class Drivetrain extends Subsystem implements PIDOutput {
    you control with the sticks is the speed
   */
   public void driveStraight(){
-    if(!pController.isEnabled()){
+    pController.enable();
       pController.setSetpoint(ahrs.getYaw());
       error=0;//updated periodically
-      pController.enable();
-    }
+      
+    
   //speed is average of the 2 stick values
   double magnitude = (Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueleft)+Robot.m_oi
   .controller.getRawAxis(RobotMap.axisvalueright))/2;
