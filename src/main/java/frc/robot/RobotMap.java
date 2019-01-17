@@ -44,8 +44,8 @@ public class RobotMap {
 
    //Initializes all the motors
  public static void init(){
-    topLeft= new Spark(0);
-    bottomLeft= new Spark(1);
+    topLeft= new Spark(1);
+    bottomLeft= new Spark(4);
     topRight= new Spark(2);
     bottomRight= new Spark(3);
     left = new SpeedControllerGroup(topLeft, bottomLeft);
