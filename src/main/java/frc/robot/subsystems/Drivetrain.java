@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.robot.commands.DriveWithJoysticks;
 
 /**
  * Add your docs here.
@@ -64,7 +65,7 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+     setDefaultCommand(new DriveWithJoysticks());
   }
 
   @Override

@@ -9,6 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.AssistedDrive;
+import frc.robot.commands.DriveWithJoysticks;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,12 +23,21 @@ public class OI {
   //// joystick.
   // You create one by telling it which joystick it's on and which button
   // number it is.
-  public  Joystick controller = new Joystick(RobotMap.controllerport);
-   JoystickButton a = new JoystickButton(controller,RobotMap.aButtton);
+  public  Joystick controller;
+  public JoystickButton a;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
+  public OI(){
+    controller= new Joystick(RobotMap.controllerport);
+    a= new JoystickButton(controller,RobotMap.aButton);
+    a.toggleWhenPressed(new AssistedDrive());
+
+    SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
+    SmartDashboard.putData("Assisted Drive", new AssistedDrive());
+
+  }
 
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
