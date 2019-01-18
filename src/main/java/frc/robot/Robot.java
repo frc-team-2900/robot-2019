@@ -93,6 +93,7 @@ public class Robot extends TimedRobot {
      * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
      * = new MyAutoCommand(); break; case "Default Auto": default:
      * autonomousCommand = new ExampleCommand(); break; }
+     * 
      */
 
     // schedule the autonomous command (example)
