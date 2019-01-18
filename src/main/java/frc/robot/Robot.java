@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
     RobotMap.init();
    drivetrain = new Drivetrain();
     m_oi = new OI();
+    SmartDashboard.putData("Commmands Scheduled", Scheduler.getInstance());
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);

@@ -9,11 +9,13 @@ package frc.robot;
 
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -52,13 +54,17 @@ public class RobotMap {
     right = new SpeedControllerGroup(topRight, bottomRight);
     
     //sensor
+    try{
     ahrs= new AHRS(SPI.Port.kMXP);
+    }
+    catch(RuntimeException e){
+        DriverStation.reportError("Error instantiating AHRS", true);
+    }
     //drivetrain
   robotDrive= new DifferentialDrive(left, right);
   robotDrive.setSafetyEnabled(true);
   robotDrive.setExpiration(0.1);
   robotDrive.setMaxOutput(1.0);
-
 
   }
 
