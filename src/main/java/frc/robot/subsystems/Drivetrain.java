@@ -61,7 +61,6 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   .controller.getRawAxis(RobotMap.axisvalueright))/2;
   robotDrive.tankDrive(magnitude+error, magnitude-error);
   }
-
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
