@@ -36,8 +36,8 @@ public class RobotMap {
    public static DifferentialDrive robotDrive;
    //controller port can be found on driver station
    public static int controllerport =1;
-    public static int axisvalueleft = 1;
-   public static  int axisvalueright =5;
+    public static int axisvalueleft = 5;
+   public static  int axisvalueright =1;
    //drive straight pid values
    public static double drivetrainKP= 0.03;
    public static double drivetrainKD =0;
@@ -46,10 +46,10 @@ public class RobotMap {
 
    //Initializes all the motors
  public static void init(){
-    topLeft= new Spark(1);
-    bottomLeft= new Spark(4);
-    topRight= new Spark(2);
-    bottomRight= new Spark(3);
+    topLeft= new Spark(3);
+    bottomLeft= new Spark(2);
+    topRight= new Spark(4);
+    bottomRight= new Spark(1);
     left = new SpeedControllerGroup(topLeft, bottomLeft);
     right = new SpeedControllerGroup(topRight, bottomRight);
     
@@ -65,6 +65,8 @@ public class RobotMap {
   robotDrive.setSafetyEnabled(true);
   robotDrive.setExpiration(0.1);
   robotDrive.setMaxOutput(1.0);
+  robotDrive.setRightSideInverted(true);
+  
 
   }
 
