@@ -36,13 +36,14 @@ public class RobotMap {
    public static DifferentialDrive robotDrive;
    //controller port can be found on driver station
    public static int controllerport =1;
-    public static int axisvalueleft = 5;
-   public static  int axisvalueright =1;
+    public static int axisvalueleft =1;
+   public static  int axisvalueright =5;
    //drive straight pid values
-   public static double drivetrainKP= 0.03;
+   public static double drivetrainKP= 1.0;
    public static double drivetrainKD =0;
    public static double drivetrainKI=0;
    public static int aButton =1;
+   public static double rightMultiplier = 0.85;
 
    //Initializes all the motors
  public static void init(){
