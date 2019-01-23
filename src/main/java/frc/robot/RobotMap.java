@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -43,7 +44,6 @@ public class RobotMap {
    public static double drivetrainKD =0;
    public static double drivetrainKI=0;
    public static int aButton =1;
-   public static double rightMultiplier = 0.85;
 
    //Initializes all the motors
  public static void init(){
@@ -61,6 +61,7 @@ public class RobotMap {
     catch(RuntimeException e){
         DriverStation.reportError("Error instantiating AHRS", true);
     }
+    SmartDashboard.putBoolean("AHRS callibrating", ahrs.isCalibrating());
     //drivetrain
   robotDrive= new DifferentialDrive(left, right);
   robotDrive.setSafetyEnabled(true);
