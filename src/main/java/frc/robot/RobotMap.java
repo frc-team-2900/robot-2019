@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -31,6 +32,7 @@ public class RobotMap {
     public static SpeedController bottomLeft;
     public static SpeedController topRight;
     public static SpeedController bottomRight;
+    public static SpeedController rampMotor;
     public static SpeedControllerGroup left;
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
@@ -53,7 +55,7 @@ public class RobotMap {
     bottomRight= new Spark(1);
     left = new SpeedControllerGroup(topLeft, bottomLeft);
     right = new SpeedControllerGroup(topRight, bottomRight);
-    
+    rampMotor= new Talon(5);
     //sensor
     try{
     ahrs= new AHRS(SPI.Port.kMXP);

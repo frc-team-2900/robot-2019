@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Ramp;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
   public static Drivetrain drivetrain;
+  public static Ramp ramp;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -41,6 +43,7 @@ public class Robot extends TimedRobot {
     // RobotMap.init needs to be initialized first, then the subsystems, and last the OI for it to work
     RobotMap.init();
    drivetrain = new Drivetrain();
+   ramp = new Ramp();
     m_oi = new OI();
     CameraServer.getInstance().startAutomaticCapture();
     SmartDashboard.putData("Commmands Scheduled", Scheduler.getInstance());
