@@ -33,6 +33,8 @@ public class RobotMap {
     public static SpeedController topRight;
     public static SpeedController bottomRight;
     public static SpeedController rampMotor;
+    public static SpeedController hookActuator;
+    public static SpeedController hookMotor;
     public static SpeedControllerGroup left;
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
@@ -56,6 +58,8 @@ public class RobotMap {
     left = new SpeedControllerGroup(topLeft, bottomLeft);
     right = new SpeedControllerGroup(topRight, bottomRight);
     rampMotor= new Talon(5);
+    hookActuator= new Talon(6);
+    hookMotor = new Talon(7);
     //sensor
     try{
     ahrs= new AHRS(SPI.Port.kMXP);
@@ -70,6 +74,7 @@ public class RobotMap {
   robotDrive.setExpiration(0.1);
   robotDrive.setMaxOutput(1.0);
   robotDrive.setRightSideInverted(true);
+
   
 
   }
