@@ -9,6 +9,7 @@ package frc.robot;
 
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Spark;
@@ -39,6 +40,7 @@ public class RobotMap {
    public static SpeedControllerGroup right;
    public static AHRS ahrs;
    public static DifferentialDrive robotDrive;
+   public static NetworkTableInstance table;
    //controller port can be found on driver station
    public static int controllerport =1;
     public static int axisvalueleft =1;
@@ -77,6 +79,10 @@ public class RobotMap {
   robotDrive.setExpiration(0.1);
   robotDrive.setMaxOutput(1.0);
   robotDrive.setRightSideInverted(true);
+
+  table= NetworkTableInstance.getDefault();
+  
+ 
 
   
 

@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.networktables.*;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -32,6 +33,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static Ramp ramp;
   public static Hook hook;
+  
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -49,6 +51,7 @@ public class Robot extends TimedRobot {
    hook = new Hook();
     m_oi = new OI();
     CameraServer.getInstance().startAutomaticCapture();
+   
     SmartDashboard.putData("Commmands Scheduled", Scheduler.getInstance());
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -65,6 +68,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+
   }
 
   /**

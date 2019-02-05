@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.OpenRamp;
+import frc.robot.commands.PullHookIn;
+import frc.robot.commands.PushHookOut;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -42,6 +44,8 @@ public class OI {
 
     a.toggleWhenPressed(new AssistedDrive());
     b.toggleWhenPressed(new OpenRamp());
+    x.toggleWhenPressed(new PullHookIn());
+    y.toggleWhenPressed(new PushHookOut());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());
