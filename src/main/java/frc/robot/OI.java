@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.DriveWithJoysticks;
+import frc.robot.commands.OpenRamp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -25,6 +26,9 @@ public class OI {
   // number it is.
   public  Joystick controller;
   public JoystickButton a;
+  public JoystickButton b;
+  public JoystickButton x;
+  public JoystickButton y;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -32,7 +36,12 @@ public class OI {
   public OI(){
     controller= new Joystick(RobotMap.controllerport);
     a= new JoystickButton(controller,RobotMap.aButton);
+    b= new JoystickButton(controller, RobotMap.bButton);
+    x= new JoystickButton (controller,RobotMap.xButton);
+    y= new JoystickButton (controller,RobotMap.xButton);
+
     a.toggleWhenPressed(new AssistedDrive());
+    b.toggleWhenPressed(new OpenRamp());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());

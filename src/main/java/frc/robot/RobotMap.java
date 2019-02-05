@@ -48,6 +48,9 @@ public class RobotMap {
    public static double drivetrainKD =0;
    public static double drivetrainKI=0;
    public static int aButton =1;
+   public static int bButton =2;
+   public static int xButton =3;
+   public static int yButton =4;
 
    //Initializes all the motors
  public static void init(){
