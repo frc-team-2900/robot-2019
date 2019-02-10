@@ -53,6 +53,7 @@ public class RobotMap {
    public static int bButton =2;
    public static int xButton =3;
    public static int yButton =4;
+   public static double autoSpeed=0.3;   
 
    //Initializes all the motors
  public static void init(){
@@ -81,7 +82,6 @@ public class RobotMap {
   robotDrive.setRightSideInverted(true);
 
   table= NetworkTableInstance.getDefault();
-  
  
 
   

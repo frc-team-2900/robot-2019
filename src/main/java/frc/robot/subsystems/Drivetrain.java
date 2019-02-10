@@ -65,6 +65,19 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   .controller.getRawAxis(RobotMap.axisvalueright))/2;
   robotDrive.tankDrive(-(magnitude+error), -(magnitude-error));
   }
+  //rotate to a given angle
+  public void rotateToAngle(double angle){
+    pController.enable();
+    pController.setSetpoint(angle);
+    error=0;
+    robotDrive.tankDrive(error, error);
+  }
+  public void driveToHatchPanel(){
+pController.enable();
+pController.setSetpoint(ahrs.getYaw());
+error=0;
+robotDrive.tankDrive(-(error+RobotMap.autoSpeed), -(RobotMap.autoSpeed-error));
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
