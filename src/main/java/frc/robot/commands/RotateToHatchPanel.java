@@ -18,12 +18,14 @@ public class RotateToHatchPanel extends Command {
     requires(Robot.drivetrain);
   }
 
-  // Called just before this Command runs the first time
+  // Called just before t
+  //his Command runs the first time
   @Override
   protected void initialize() {
     RobotMap.robotDrive.stopMotor();
    origyaw= RobotMap.ahrs.getYaw();
-   rotateangle= (double)RobotMap.table.getEntry("tapeYaw").getNumber(100);
+   rotateangle=RobotMap.table.getTable("ChichenVision").getEntry("tapeDetected").getBoolean(false)?
+    (double)RobotMap.table.getTable("ChichenVision").getEntry("tapeYaw").getNumber(100):100;
     Robot.drivetrain.setupPConroller(RobotMap.drivetrainKP, RobotMap.drivetrainKI, RobotMap.drivetrainKD);
   }
 
