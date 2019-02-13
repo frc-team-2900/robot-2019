@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.DriveWithJoysticks;
+import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
 import frc.robot.commands.PullHookIn;
 import frc.robot.commands.PushHookOut;
@@ -43,7 +44,7 @@ public class OI {
     y= new JoystickButton (controller,RobotMap.xButton);
 
     a.toggleWhenPressed(new AssistedDrive());
-    b.toggleWhenPressed(new OpenRamp());
+    b.toggleWhenPressed(new OpenHook());
     x.toggleWhenPressed(new PullHookIn());
     y.toggleWhenPressed(new PushHookOut());
 
