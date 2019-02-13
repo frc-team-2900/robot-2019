@@ -64,8 +64,8 @@ public class RobotMap {
     left = new SpeedControllerGroup(topLeft, bottomLeft);
     right = new SpeedControllerGroup(topRight, bottomRight);
     rampMotor= new Talon(5);
-    hookActuator= new Talon(6);
-    hookMotor = new Talon(7);
+    hookActuator= new Talon(7);
+    hookMotor = new Talon(6);
     //sensor
     try{
     ahrs= new AHRS(SPI.Port.kMXP);
