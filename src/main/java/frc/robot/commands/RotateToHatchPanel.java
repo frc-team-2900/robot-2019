@@ -45,6 +45,7 @@ public class RotateToHatchPanel extends Command {
   @Override
   protected void end() {
     RobotMap.robotDrive.stopMotor();
+    Robot.drivetrain.pController.disable();
   }
 
   // Called when another command which requires one or more of the same

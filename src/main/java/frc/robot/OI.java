@@ -50,6 +50,7 @@ public class OI {
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());
+    SmartDashboard.putData("Open Hook", new OpenHook());
 
   }
 

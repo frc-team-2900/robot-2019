@@ -50,7 +50,7 @@ public class Robot extends TimedRobot {
    ramp = new Ramp();
    hook = new Hook();
     m_oi = new OI();
-    CameraServer.getInstance().startAutomaticCapture();
+ //   CameraServer.getInstance().startAutomaticCapture();
    
     SmartDashboard.putData("Commmands Scheduled", Scheduler.getInstance());
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
