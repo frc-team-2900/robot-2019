@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
+import frc.robot.commands.AutoPlaceHatchPanel;
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
@@ -45,12 +46,16 @@ public class OI {
 
     a.toggleWhenPressed(new AssistedDrive());
     b.toggleWhenPressed(new OpenHook());
-    x.toggleWhenPressed(new PullHookIn());
+    x.toggleWhenPressed(new AutoPlaceHatchPanel());
     y.toggleWhenPressed(new PushHookOut());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());
     SmartDashboard.putData("Open Hook", new OpenHook());
+    SmartDashboard.putData("Auto Place Hatch Panel", new AutoPlaceHatchPanel());
+    SmartDashboard.putData("Open Ramp",new OpenRamp());
+    SmartDashboard.putData("Push hook in", new PullHookIn());
+    SmartDashboard.putData("Push hook out", new PushHookOut());
 
   }
 
