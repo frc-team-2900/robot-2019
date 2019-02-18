@@ -24,7 +24,7 @@ public class PushHookOut extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hookActuator.set(0.3);
+    RobotMap.hookActuator.set(0.6);
   }
 
   // Make this return true when this Command no longer needs to run execute()
