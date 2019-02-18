@@ -50,11 +50,11 @@ public class OI {
   right = new JoystickButton(controller, RobotMap.rightButton);
 
     a.toggleWhenPressed(new AssistedDrive());
-    b.whileHeld(new OpenHook());
+    b.toggleWhenPressed(new OpenHook());
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
-    y.whileHeld(new PushHookOut());
-    left.whileHeld(new PullHookIn());
-    right.whileHeld(new CloseHook());
+    y.toggleWhenPressed(new PushHookOut());
+    left.toggleWhenPressed(new PullHookIn());
+    right.toggleWhenPressed(new CloseHook());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());

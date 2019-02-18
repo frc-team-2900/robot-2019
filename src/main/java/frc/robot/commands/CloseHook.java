@@ -25,7 +25,7 @@ public class CloseHook extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hookMotor.set(-0.6);
+    RobotMap.hookMotor.set(-Robot.m_oi.controller.getRawAxis(3));
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,7 +37,7 @@ public class CloseHook extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    RobotMap.hookMotor.stopMotor();
+    RobotMap.hookMotor.set(0.0);
   }
 
 
