@@ -11,9 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class OpenHook extends Command {
-  public OpenHook() {
-   requires(Robot.hook);
+public class CloseHook extends Command {
+  public CloseHook() {
+    // Use requires() here to declare subsystem dependencies
+      requires(Robot.hook);
   }
 
   // Called just before this Command runs the first time
@@ -24,8 +25,7 @@ public class OpenHook extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hookMotor.set(0.2);
-
+    RobotMap.hookMotor.set(-0.2);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +39,7 @@ public class OpenHook extends Command {
   protected void end() {
     RobotMap.hookMotor.stopMotor();
   }
+
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run

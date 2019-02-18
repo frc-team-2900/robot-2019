@@ -53,6 +53,8 @@ public class RobotMap {
    public static int bButton =2;
    public static int xButton =3;
    public static int yButton =4;
+   public static int leftButton=5;
+   public static int rightButton=6;
    public static double autoSpeed=0.3;   
 
    //Initializes all the motors

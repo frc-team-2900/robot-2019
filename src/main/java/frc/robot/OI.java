@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.AutoPlaceHatchPanel;
+import frc.robot.commands.CloseHook;
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
@@ -33,6 +34,8 @@ public class OI {
   public JoystickButton b;
   public JoystickButton x;
   public JoystickButton y;
+  public JoystickButton left;
+  public JoystickButton right;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -43,11 +46,15 @@ public class OI {
     b= new JoystickButton(controller, RobotMap.bButton);
     x= new JoystickButton (controller,RobotMap.xButton);
     y= new JoystickButton (controller,RobotMap.xButton);
+  left= new JoystickButton(controller, RobotMap.leftButton);
+  right = new JoystickButton(controller, RobotMap.rightButton);
 
     a.toggleWhenPressed(new AssistedDrive());
     b.toggleWhenPressed(new OpenHook());
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
     y.toggleWhenPressed(new PushHookOut());
+    left.toggleWhenPressed(new PullHookIn());
+    right.whileHeld(new CloseHook());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());
