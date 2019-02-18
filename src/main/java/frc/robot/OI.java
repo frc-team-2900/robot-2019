@@ -50,7 +50,7 @@ public class OI {
   right = new JoystickButton(controller, RobotMap.rightButton);
 
     a.toggleWhenPressed(new AssistedDrive());
-    b.toggleWhenPressed(new OpenHook());
+    b.whileHeld(new OpenHook());
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
     y.toggleWhenPressed(new PushHookOut());
     left.toggleWhenPressed(new PullHookIn());

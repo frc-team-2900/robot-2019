@@ -24,7 +24,7 @@ public class OpenHook extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hookMotor.set(0.2);
+    RobotMap.hookMotor.set(0.4);
 
   }
 
