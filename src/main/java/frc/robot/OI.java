@@ -52,8 +52,8 @@ public class OI {
     a.toggleWhenPressed(new AssistedDrive());
     b.whileHeld(new OpenHook());
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
-    y.toggleWhenPressed(new PushHookOut());
-    left.toggleWhenPressed(new PullHookIn());
+    y.whileHeld(new PushHookOut());
+    left.whileHeld(new PullHookIn());
     right.whileHeld(new CloseHook());
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
