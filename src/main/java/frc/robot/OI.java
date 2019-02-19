@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.AutoPlaceHatchPanel;
-import frc.robot.commands.CloseHook;
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
@@ -50,11 +49,11 @@ public class OI {
   right = new JoystickButton(controller, RobotMap.rightButton);
 
     a.toggleWhenPressed(new AssistedDrive());
-    b.toggleWhenPressed(new OpenHook());
+    
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
     y.toggleWhenPressed(new PushHookOut());
     left.toggleWhenPressed(new PullHookIn());
-    right.toggleWhenPressed(new CloseHook());
+    
 
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());

@@ -24,8 +24,16 @@ public class OpenHook extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if(Robot.m_oi.controller.getRawAxis(2)>0&&Robot.m_oi.controller.getRawAxis(3)==0){
     RobotMap.hookMotor.set(Robot.m_oi.controller.getRawAxis(2));
-
+    }
+    else if(Robot.m_oi.controller.getRawAxis(3)>0&&Robot.m_oi.controller.getRawAxis(2)==0){
+      RobotMap.hookMotor.set(-Robot.m_oi.controller.getRawAxis(3));
+    }
+    else {
+      RobotMap.hookMotor.set(0);
+      System.out.println("Both axies are above 0");
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
