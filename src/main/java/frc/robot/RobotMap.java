@@ -68,6 +68,7 @@ public class RobotMap {
     rampMotor= new Talon(5);
     hookActuator= new Talon(7);
     hookMotor = new Talon(6);
+  
     //sensor
     try{
     ahrs= new AHRS(SPI.Port.kMXP);
@@ -84,7 +85,8 @@ public class RobotMap {
   robotDrive.setRightSideInverted(true);
 
   table= NetworkTableInstance.getDefault();
- 
+  
+
 
   
 
