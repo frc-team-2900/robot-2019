@@ -27,8 +27,7 @@ public class DriveWithJoysticks extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.robotDrive.tankDrive(-Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueleft),
-    -Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueright));
+    RobotMap.robotDrive.tankDrive(-Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueleft),-Robot.m_oi.controller.getRawAxis(RobotMap.axisvalueright));
   }
 
   // Make this return true when this Command no longer needs to run execute()

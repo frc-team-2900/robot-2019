@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AssistedDrive;
 import frc.robot.commands.AutoPlaceHatchPanel;
+import frc.robot.commands.CloseRamp;
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
@@ -44,17 +45,17 @@ public class OI {
     a= new JoystickButton(controller,RobotMap.aButton);
     b= new JoystickButton(controller, RobotMap.bButton);
     x= new JoystickButton (controller,RobotMap.xButton);
-    y= new JoystickButton (controller,RobotMap.xButton);
+    y= new JoystickButton (controller,RobotMap.yButton);
   left= new JoystickButton(controller, RobotMap.leftButton);
   right = new JoystickButton(controller, RobotMap.rightButton);
 
     a.toggleWhenPressed(new AssistedDrive());
     
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
-    y.toggleWhenPressed(new PushHookOut());
-    left.toggleWhenPressed(new PullHookIn());
-    
-
+    y.whenPressed(new PushHookOut());
+    left.whenPressed(new PullHookIn());
+    right.toggleWhenPressed(new OpenRamp());
+    b.toggleWhenPressed(new CloseRamp());
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());
     SmartDashboard.putData("Open Hook", new OpenHook());
@@ -62,7 +63,7 @@ public class OI {
     SmartDashboard.putData("Open Ramp",new OpenRamp());
     SmartDashboard.putData("Push hook in", new PullHookIn());
     SmartDashboard.putData("Push hook out", new PushHookOut());
-
+    SmartDashboard.putData("Close Ramp", new CloseRamp());
   }
 
   //// TRIGGERING COMMANDS WITH BUTTONS

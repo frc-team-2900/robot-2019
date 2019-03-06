@@ -7,13 +7,15 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class PushHookOut extends Command {
-  public PushHookOut() {
-    requires(Robot.hookAct);
+public class CloseRamp extends Command {
+  public CloseRamp() {
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -24,7 +26,8 @@ public class PushHookOut extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hookActuator.set(0.8);
+    RobotMap.rampMotor.set(0.8);
+    DriverStation.reportWarning("Ramp motor running", false);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -36,7 +39,6 @@ public class PushHookOut extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    RobotMap.hookActuator.stopMotor();
   }
 
   // Called when another command which requires one or more of the same

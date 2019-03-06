@@ -7,10 +7,12 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-/**
+/**.
  * Add your docs here.
  */
 public class Ramp extends Subsystem {
@@ -23,7 +25,8 @@ public class Ramp extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
   public void openRamp(){
-    RobotMap.rampMotor.set(0.1);
+    RobotMap.rampMotor.set(-0.8);
+    DriverStation.reportWarning("Ramp Motor running", false);
   }
   
 }
