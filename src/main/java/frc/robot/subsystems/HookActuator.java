@@ -8,17 +8,17 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.OpenHook;
 
 /**
  * Add your docs here.
  */
-public class Hook extends Subsystem {
+public class HookActuator extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new OpenHook());
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
   }
 }

@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 
 public class OpenHook extends Command {
   public OpenHook() {
-   requires(Robot.hook);
+   requires(Robot.hookClaw);
   }
 
   // Called just before this Command runs the first time

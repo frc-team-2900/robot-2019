@@ -17,7 +17,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.Hook;
+//import frc.robot.subsystems.Hook;
+import frc.robot.subsystems.HookActuator;
+import frc.robot.subsystems.HookClaw;
 import frc.robot.subsystems.Ramp;
 
 /**
@@ -32,7 +34,8 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Drivetrain drivetrain;
   public static Ramp ramp;
-  public static Hook hook;
+  public static HookClaw hookClaw;
+  public static HookActuator hookAct;
   
 
   Command m_autonomousCommand;
@@ -48,7 +51,8 @@ public class Robot extends TimedRobot {
     RobotMap.init();
    drivetrain = new Drivetrain();
    ramp = new Ramp();
-   hook = new Hook();
+   hookClaw = new HookClaw();
+   hookAct= new HookActuator();
     m_oi = new OI();
  //   CameraServer.getInstance().startAutomaticCapture();
    

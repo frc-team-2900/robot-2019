@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 
 public class PullHookIn extends Command {
   public PullHookIn() {
-    requires(Robot.hook);
+    requires(Robot.hookAct);
   }
 
   // Called just before this Command runs the first time

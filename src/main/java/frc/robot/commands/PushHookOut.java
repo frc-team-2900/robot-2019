@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 
 public class PushHookOut extends Command {
   public PushHookOut() {
-    requires(Robot.hook);
+    requires(Robot.hookAct);
   }
 
   // Called just before this Command runs the first time
