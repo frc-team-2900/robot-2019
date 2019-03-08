@@ -14,8 +14,7 @@ import frc.robot.RobotMap;
 
 public class CloseRamp extends Command {
   public CloseRamp() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.ramp);
   }
 
   // Called just before this Command runs the first time
@@ -39,6 +38,7 @@ public class CloseRamp extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    RobotMap.rampMotor.stopMotor();
   }
 
   // Called when another command which requires one or more of the same
