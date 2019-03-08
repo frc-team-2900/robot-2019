@@ -52,9 +52,9 @@ public class OI {
     a.toggleWhenPressed(new AssistedDrive());
     
     x.toggleWhenPressed(new AutoPlaceHatchPanel());
-    y.whenPressed(new PushHookOut());
+    y.whenPressed(new OpenRamp());
     left.whenPressed(new PullHookIn());
-    right.toggleWhenPressed(new OpenRamp());
+    right.toggleWhenPressed(new PushHookOut());
     b.toggleWhenPressed(new CloseRamp());
     SmartDashboard.putData("Tank Drive", new DriveWithJoysticks());
     SmartDashboard.putData("Assisted Drive", new AssistedDrive());

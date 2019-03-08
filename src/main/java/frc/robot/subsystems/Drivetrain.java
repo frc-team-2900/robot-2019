@@ -12,6 +12,7 @@ import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -67,6 +68,7 @@ public class Drivetrain extends Subsystem implements PIDOutput {
   }
   //rotate to a given angle
   public void rotateToAngle(double angle){
+    DriverStation.reportWarning("Rotating", false);
     pController.enable();
     pController.setSetpoint(angle);
     error=0;

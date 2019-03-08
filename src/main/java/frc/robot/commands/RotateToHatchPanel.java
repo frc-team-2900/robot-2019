@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
@@ -23,6 +24,7 @@ public class RotateToHatchPanel extends Command {
   @Override
   protected void initialize() {
     RobotMap.robotDrive.stopMotor();
+DriverStation.reportWarning("iNITIALIZING", false);
    origyaw= RobotMap.ahrs.getYaw();
    rotateangle=RobotMap.table.getTable("ChichenVision").getEntry("tapeDetected").getBoolean(false)?
     (double)RobotMap.table.getTable("ChichenVision").getEntry("tapeYaw").getNumber(100):100;
