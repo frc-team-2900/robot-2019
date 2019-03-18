@@ -42,7 +42,7 @@ public class RobotMap {
    public static DifferentialDrive robotDrive;
    public static NetworkTableInstance table;
    //controller port can be found on driver station
-   public static int controllerport =1;
+   public static int controllerport =0;
     public static int axisvalueleft =1;
    public static  int axisvalueright =5;
    //drive straight pid values

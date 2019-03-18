@@ -18,6 +18,7 @@ import frc.robot.commands.OpenHook;
 import frc.robot.commands.OpenRamp;
 import frc.robot.commands.PullHookIn;
 import frc.robot.commands.PushHookOut;
+import frc.robot.commands.Rumble;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -51,7 +52,7 @@ public class OI {
 
     a.toggleWhenPressed(new AssistedDrive());
     
-    x.toggleWhenPressed(new AutoPlaceHatchPanel());
+    x.toggleWhenPressed(new Rumble());
     y.whenPressed(new OpenRamp());
     left.whenPressed(new PullHookIn());
     right.toggleWhenPressed(new PushHookOut());
