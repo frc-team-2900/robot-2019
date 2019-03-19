@@ -43,5 +43,6 @@ public class PushHookOut extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    RobotMap.rampMotor.stopMotor();
   }
 }
